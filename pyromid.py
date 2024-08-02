@@ -102,7 +102,7 @@ richList = set(rl)
 while True:
     z += threadCount
     wod = GetMnemonic()
-    compressAddress, UncompressAddress, PrivateKey = PrivateKeyFromMnemonic(wod)
+    compressAddress, UncompressAddress, PrivateKey = new_func(PrivateKeyFromMnemonic, wod)
     sys.stdout.write(f"\x1b]2;Total:{z} Found:{w}\x07")
     sys.stdout.flush()
     if compressAddress in richList or UncompressAddress in richList:
